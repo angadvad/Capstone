@@ -1,0 +1,174 @@
+{
+  "carpark": [
+    {
+      "id": 1,
+      "first_name": "Bob",
+      "last_name": "Ross",
+      "car_model": "Suzuki Swift",
+      "number_plate": "ABC123",
+      "parking_space": "A1"
+    },
+    {
+      "id": 2,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "ABC450",
+      "parking_space": "A2"
+    },
+    {
+      "id": 3,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "ABC450",
+      "parking_space": "A3"
+    },
+    {
+      "id": 4,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "CSG123",
+      "parking_space": "A4"
+    },
+    {
+      "id": 5,
+      "first_name": "John",
+      "last_name": "Smith",
+      "car_model": "Toyota Chaser",
+      "number_plate": "JZX180",
+      "parking_space": "B1"
+    },
+    {
+      "id": 6,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "ABC450",
+      "parking_space": "C1"
+    },
+    {
+      "id": 7,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "C2"
+    },
+    {
+      "id": 8,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "C3"
+    },
+    {
+      "id": 9,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "C4"
+    },
+    {
+      "id": 10,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "D1"
+    },
+    {
+      "id": 11,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "D2"
+    },
+    {
+      "id": 12,
+      "first_name": "Billy",
+      "last_name": "T",
+      "car_model": "Mazda",
+      "number_plate": "XYZ999",
+      "parking_space": "D3"
+    },
+    {
+      "id": 13,
+      "first_name": "Jay",
+      "last_name": "Ray",
+      "car_model": "",
+      "number_plate": "DEF850",
+      "parking_space": "D4"
+    },
+    {
+      "id": 14,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "E1"
+    },
+    {
+      "id": 15,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "F1"
+    },
+    {
+      "id": 16,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "",
+      "parking_space": "F2"
+    },
+    {
+      "id": 17,
+      "first_name": "Angad",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "LOL222",
+      "parking_space": "F3"
+    },
+    {
+      "id": 18,
+      "first_name": "",
+      "last_name": "",
+      "car_model": "",
+      "number_plate": "OWO111",
+      "parking_space": "F4"
+    }
+  ],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$WlOWscx1IwaIYKzShBbAcuhc0M5DKr8dQfzHpQZr5aUObm9ItzIkq",
+      "numberPlate": "EYE100",
+      "id": 1
+    },
+    {
+      "email": "bob@gmail.com",
+      "password": "$2a$10$fHLPjXMWUNXnKL2OWI78we2/SXn46NsMyQ6JdgWcNFQwKM8Zn21LK",
+      "numberPlate": "ABC123",
+      "id": 2
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "$2a$10$f3bnLcKyww0CcosufIW4D.cCicCzhSCljmJLDcvYnm8fxXLLYr9Zm",
+      "numberPlate": "abc122222222222",
+      "id": 3
+    },
+    {
+      "email": "test3@gmail.com",
+      "password": "$2a$10$.Vk.tfqHrmA0cZ3Zw9wXZeIb5qQ9iaKeMk6WQImggz49Sm5EhBUx.",
+      "numberPlate": "VVV123",
+      "id": 4
+    }
+  ]
+}

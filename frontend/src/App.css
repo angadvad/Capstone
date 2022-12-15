@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.main-bg {
+  display: flex;
+  color: aliceblue;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-bg>.carpark {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . ."
+    ". . . . . ."
+    ". . . . . ."
+    ". . . . . ."
+    ". . . . . ."
+    ". . . . . .";
+  width: 30%;
+  height: 90%;
+}
+
+.park {
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:30px;
+}
+
+.taken {
+  background-color: "red";
+  color: "lightblue";
+  height: "100%";
+  width: "100%";
+  font-size:0px;
+}
+
+.park .hover_p{
+  display:none;
+}
+
+.park:hover .hover_p{
+  height: 100%;
+  width: 100%;
+  display: inline;
+  font-size:30px
+}
+
+.park:hover .hover_text{
+  display: none;
+}
+
+.road {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+}
+
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #383636; /* Blue */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.spinner-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
