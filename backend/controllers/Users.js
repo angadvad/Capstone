@@ -38,6 +38,7 @@ export const Login = async(req, res) => {
                 email: req.body.email
             }
         });
+
         const match = await bcrypt.compare(req.body.password, user[0].password);
         if(!match) return res.status(400).json({msg: "Wrong Password"});
         const userId = user[0].id;
@@ -58,6 +59,7 @@ export const Login = async(req, res) => {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000
         });
+
         res.json({ accessToken, userId});
     } catch (error) {
         res.status(404).json({msg:"Email error"});

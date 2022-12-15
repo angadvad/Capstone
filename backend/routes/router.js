@@ -5,7 +5,7 @@ import { refreshToken } from "../controllers/RefreshToken.js";
 import { getCarparkDb , getTakenParks, getFreeParks, updateCarparks, findParkedCars} from "../controllers/Carpark.js"
 const router = express.Router();
 
-router.get('/carpark',getCarparkDb);
+router.get('/carpark',verifyToken, getCarparkDb);
 router.get('/freeparks',getFreeParks);
 router.post('/updatecarpark',updateCarparks);
 router.post('/findparkedcars',findParkedCars);
