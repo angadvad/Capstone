@@ -16,8 +16,38 @@ export const getUsers = async(req, res) => {
 export const Register = async(req, res) => {
     const { name, email, number_plate, password, confPassword } = req.body;
     if(password !== confPassword) return res.status(400).json({msg: "Password doesn't match confirmed password"});
+    if(password=='')return res.status(400).json({msg: "Password can't be empty"});
+
+    try {
+
+        const emailCheck = await Users.findAll({
+            attributes:['id'],
+            where: {
+                email:email
+            }
+        });
+
+        const adminCheck = await Users.findAll({
+            attributes:['id'],
+            where: {
+                email:'admin'
+            }
+        });
+
+        if(emailCheck.length>0){
+            res.status(400).json({msg:"Email is currently in use"})
+        }
+        if(adminCheck>0){
+            res.status(400).json({msg:"Admin user is already registered, please contact service desk for help"})
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt);
+
     try {
         await Users.create({
             name: name,

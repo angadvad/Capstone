@@ -17,10 +17,19 @@ function Signup(props) {
     const [alertText, setAlertText] = useState("Error");
 
     const Register = async (e) => {
-        const re = /[A-Z]{1,6}[0-9]{1,6}/;
+        const regNumberPlate = /[A-Z]{1,6}[0-9]{1,6}/;
+        const regEmailAddress = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         e.preventDefault();
+        let emailCheck = false;
 
-        if (re.exec(formData.number_plate)) {
+        if(regEmailAddress.exec(formData.email)==null){
+            emailCheck = false;
+        }else{
+            emailCheck = regEmailAddress.exec(formData.email) ? true : false;
+        }
+        
+
+        if (regNumberPlate.exec(formData.number_plate) && emailCheck && formData.name!=='') {
             if (formData.number_plate.length > 6) {
                 setOpen(true);
                 setAlertText("Number Plate has to be 6 characters");
@@ -35,6 +44,7 @@ function Signup(props) {
                     });
                     routeChangeHome();
                 } catch (error) {
+
                     if (error.response) {
                         console.log(error.response)
                         setOpen(true);
@@ -43,8 +53,18 @@ function Signup(props) {
                 }
             }
         } else {
-            setOpen(true);
-            setAlertText("Number Plate isn't valid");
+
+            if (!regNumberPlate.exec(formData.number_plate)) {
+                setOpen(true);
+                setAlertText("Number Plate isn't valid");
+            }else if(regEmailAddress.exec(formData.email)==null || formData.email == ''){
+                setOpen(true);
+                setAlertText("Email isn't valid");
+            }else{
+                setOpen(true);
+                setAlertText("Please fill in missing fields");
+            }
+
         }
 
     }

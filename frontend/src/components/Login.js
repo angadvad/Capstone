@@ -31,10 +31,12 @@ const Login = (props) => {
                 email: formData.email,
                 password: formData.password
             }).then(function (res) {
-                console.log(res)
                 localStorage.setItem("user_id", `${res.data.userId}`)
                 localStorage.setItem("token", `${res.data.accessToken}`)
                 localStorage.setItem("isLoggedIn", true)
+                if (formData.email == "admin"){
+                    localStorage.setItem("isAdmin", true)
+                }
             });
             routeChangeHome();
         } catch (error) {
@@ -52,15 +54,15 @@ const Login = (props) => {
 
         <div className='h-screen w-full flex flex-col justify-center bg-teal-500'>
             <form className='login-form max-w-[370px] w-full mx-auto rounded-lg bg-gray-900 p-8 px-8' onSubmit={e => Auth(e)}>
-                <div class="w-[200px] h-[200px] bg-transparent cursor-pointer group perspective">
-                    <div class="preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-                        <div class="absolute backface-hidden w-full h-full">
+                <div className="w-[200px] h-[200px] bg-transparent cursor-pointer group perspective">
+                    <div className="preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
+                        <div className="absolute backface-hidden w-full h-full">
                             <h2 className='text-4xl dark:text-white font-bold text-center'><DirectionsCarFilledIcon class="scale-5 bg-teal-500 rounded-3xl"></DirectionsCarFilledIcon></h2>
                         </div>
-                        <div class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden rounded-3xl">
-                            <div class="bg-teal-500 w-full h-full text-center flex flex-col items-center justify-center scale-[2.5]">
+                        <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden rounded-3xl">
+                            <div className="bg-teal-500 w-full h-full text-center flex flex-col items-center justify-center scale-[2.5]">
                                 <DirectionsCarFilledIcon fontSize="large"></DirectionsCarFilledIcon>
-                                <p class="scale-[0.75]">PARKABLE</p>
+                                <p className="scale-[0.75]">PARKABLE</p>
                             </div>
                         </div>
                     </div>
@@ -68,7 +70,7 @@ const Login = (props) => {
 
                 <div className='flex flex-col text-gray-400 py-2'>
                     <label>Email</label>
-                    <input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' autocomplete="off"
+                    <input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' autoComplete="off"
                         type='text' placeholder='bob@gmail.com' value={formData.email} name='email' onChange={e => handleChange(e)} ></input>
                 </div>
                 <div className='flex flex-col text-gray-400 py-2'>
