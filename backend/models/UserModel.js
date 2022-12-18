@@ -10,16 +10,17 @@ const Users = db.define('users',{
     email:{
         type: DataTypes.STRING
     },
-    number_plate:{
-        type: DataTypes.STRING
-    },
     password:{
         type: DataTypes.STRING
     },
     refresh_token:{
         type: DataTypes.TEXT
+    },
+    number_plate:{
+        type: DataTypes.STRING
     }
 },{
+    timestamps: false,
     freezeTableName:true
 });
 

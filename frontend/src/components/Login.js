@@ -27,10 +27,12 @@ const Login = (props) => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
+
             await axios.post('http://localhost:5000/login', {
                 email: formData.email,
                 password: formData.password
             }).then(function (res) {
+                console.log(res);
                 localStorage.setItem("user_id", `${res.data.userId}`)
                 localStorage.setItem("token", `${res.data.accessToken}`)
                 localStorage.setItem("isLoggedIn", true)
