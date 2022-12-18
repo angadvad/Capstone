@@ -16,3 +16,5 @@ express
 jsonwebtoken
 mysql2
 sequelize
+
+refer to the README_DETAILED document for more indepth instructions
