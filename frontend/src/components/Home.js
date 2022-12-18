@@ -39,7 +39,6 @@ const Home = () => {
   }, [formData.parking_space])
 
   const getCarParkSpaces = () => {
-    console.log('test')
     axios.get(`http://localhost:5000/freeparks`)
       .then(res => {
 

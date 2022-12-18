@@ -103,8 +103,7 @@ const Dashboard = () => {
   }
 
   function takenClick(i) {
-    console.log(carparks[i]);
-    alert(`This carpark is taken by _____ number plate: ${carparks[i].number_plate}`)
+    alert(`This carpark is taken by number plate: ${carparks[i].number_plate}`)
 
   }
 
